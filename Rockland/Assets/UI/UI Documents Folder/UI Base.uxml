@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="FaHome" src="project://database/Assets/Icons/FaHome.uxml?fileID=9197481963319205126&amp;guid=43fc6f7b97e501749bcd0f84b2a2b456&amp;type=3#FaHome" />
+    <Style src="project://database/Assets/UI/USS/Base%20USS.uss?fileID=7433441132597879392&amp;guid=ac80b65cf25f2c142b053b3c9eaeacc7&amp;type=3#Base USS" />
+    <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgb(0, 224, 54); height: 121px;" />
+    <ui:VisualElement name="Body" style="flex-grow: 1; height: 900px;">
+        <ui:ScrollView name="Home-Screen">
+            <ui:Label tabindex="-1" text="Favourite Rock" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Favourite-Rock" />
+        </ui:ScrollView>
+    </ui:VisualElement>
+    <ui:VisualElement name="Footer" style="flex-grow: 1; background-color: rgb(28, 163, 2); align-items: flex-start; justify-content: center;">
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Home-Button" style="flex-direction: row; align-items: auto; justify-content: flex-start; transform-origin: center; scale: 1 2; align-self: auto;">
+            <ui:Instance template="FaHome" name="FaHome" style="width: 126px; height: 32px;" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>
