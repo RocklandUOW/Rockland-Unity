@@ -1,13 +1,35 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="Base-Container" style="flex-grow: 1;">
-        <ui:VisualElement name="Header-Container" style="flex-grow: 1; height: auto; max-height: 10%; background-color: rgb(0, 217, 36);">
-            <ui:VisualElement name="Gold-Counter-Container" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Gold-Counter" />
+    <ui:VisualElement name="Base" style="flex-grow: 1; background-color: rgb(232, 232, 232);">
+        <ui:VisualElement name="Header" style="height: 15%; flex-direction: row; flex-shrink: 1; flex-wrap: nowrap; align-self: auto; align-items: center; justify-content: space-between; background-color: rgba(0, 0, 0, 0); padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 15px; flex-grow: 0;">
+            <ui:Button text="←" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 0; height: 30px; width: 30px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; border-left-color: rgba(18, 18, 18, 0); border-right-color: rgba(18, 18, 18, 0); border-top-color: rgba(18, 18, 18, 0); border-bottom-color: rgba(18, 18, 18, 0); background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); -unity-font-style: bold;" />
+            <ui:VisualElement style="flex-grow: 1; min-height: 30px; max-width: 100px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; -unity-background-image-tint-color: rgb(0, 0, 0); background-color: rgb(145, 115, 82); width: 100px; height: 30px; align-items: center; justify-content: flex-start; align-self: auto; flex-direction: row-reverse; padding-top: 0; padding-right: 7px; padding-bottom: 0; padding-left: 7px;">
+                <ui:VisualElement name="Coin-icon" style="flex-grow: 0; border-top-left-radius: 1000px; border-top-right-radius: 1000px; border-bottom-right-radius: 1000px; border-bottom-left-radius: 1000px; background-color: rgb(255, 184, 0); width: 20px; height: 20px; flex-shrink: 0;" />
+                <ui:Label tabindex="-1" text="999999" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); flex-shrink: 1; justify-content: flex-start; -unity-text-align: middle-left;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Body-Container" style="flex-grow: 1;">
-            <ui:VisualElement name="Pet-Rock-Container" style="flex-grow: 1;" />
-            <ui:VisualElement name="Pet-Stats-Container" style="flex-grow: 1;" />
+        <ui:VisualElement name="Body-Container" style="flex-grow: 1; min-height: auto; min-width: auto;">
+            <ui:VisualElement name="Pet-Rock-Metadata" style="flex-grow: 0; max-height: none;">
+                <ui:Label tabindex="-1" text="Zulkifli" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Rock-name" style="-unity-text-align: upper-center; -unity-font-style: bold; font-size: 24px; text-overflow: clip; padding-bottom: 0; margin-bottom: 0;" />
+                <ui:Label tabindex="-1" text="Zamrud Katulistiwa" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Rock-type" style="-unity-text-align: upper-center; padding-top: 0; margin-top: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Pet-Rock-Container" style="flex-grow: 0.5; justify-content: center; align-items: center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Pet-Button" style="width: 200px; height: 200px; background-image: url(&apos;project://database/Assets/Images/rock_pet_example.png?fileID=21300000&amp;guid=0469c762ae8ca2244b08000f65f68f0d&amp;type=3#rock_pet_example&apos;); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-color: rgba(188, 188, 188, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Pet-Stats-Container" style="flex-grow: 0; align-items: center; flex-direction: row; justify-content: center; margin-bottom: 10px;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row-reverse; align-items: center; justify-content: center; align-self: auto; padding-top: 0; padding-right: 5px; padding-bottom: 0; padding-left: 5px;">
+                    <ui:Label tabindex="-1" text="56 / seconds" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 12px;" />
+                    <ui:VisualElement name="Coin-icon" style="flex-grow: 0; border-top-left-radius: 1000px; border-top-right-radius: 1000px; border-bottom-right-radius: 1000px; border-bottom-left-radius: 1000px; background-color: rgb(255, 184, 0); width: 15px; height: 15px; flex-shrink: 0;" />
+                </ui:VisualElement>
+                <ui:Label tabindex="-1" text="•" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center;" />
+                <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row-reverse; align-items: center; justify-content: center; align-self: auto; padding-right: 5px; padding-left: 5px;">
+                    <ui:Label tabindex="-1" text="700 / tap" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 12px;" />
+                    <ui:VisualElement name="Coin-icon" style="flex-grow: 0; border-top-left-radius: 1000px; border-top-right-radius: 1000px; border-bottom-right-radius: 1000px; border-bottom-left-radius: 1000px; background-color: rgb(255, 184, 0); width: 15px; height: 15px; flex-shrink: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(51, 176, 62); background-image: none; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); height: 45px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; width: 200px; align-self: center; margin-top: 10px; -unity-font-style: bold; font-size: 14px; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; flex-direction: row-reverse; justify-content: center;">
+                <ui:VisualElement style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Images/feed_icon_placeholder.png?fileID=21300000&amp;guid=1932dfab0c3cabd4bba68e38fed47dd1&amp;type=3#feed_icon_placeholder&apos;); width: 20px; height: 20px; justify-content: space-around; align-items: stretch; -unity-slice-scale: 9px; -unity-slice-left: 0; -unity-background-scale-mode: scale-to-fit; flex-shrink: 0;" />
+                <ui:Label tabindex="-1" text="Feed" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 14px;" />
+            </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
