@@ -13,7 +13,19 @@
         "m_CodePreviewVisible": true,
         "m_OpenUXMLFiles": [
             {
-                "m_OpenUSSFiles": [],
+                "m_OpenUSSFiles": [
+                    {
+                        "m_StyleSheet": {
+                            "fileID": 7433441132597879392,
+                            "guid": "ac80b65cf25f2c142b053b3c9eaeacc7",
+                            "type": 3
+                        },
+                        "m_BackupStyleSheet": {
+                            "instanceID": 0
+                        },
+                        "m_OldPath": "Assets/UI/USS/styles.uss"
+                    }
+                ],
                 "m_VisualTreeAssetBackup": {
                     "instanceID": 0
                 },
@@ -24,7 +36,9 @@
                     "type": 3
                 },
                 "m_ActiveStyleSheet": {
-                    "instanceID": 0
+                    "fileID": 7433441132597879392,
+                    "guid": "ac80b65cf25f2c142b053b3c9eaeacc7",
+                    "type": 3
                 },
                 "m_Settings": {
                     "UxmlGuid": "9f6951074a90a1d4b82e13664f8a98a2",
@@ -36,8 +50,8 @@
                     "MatchGameView": false,
                     "ZoomScale": 0.30000001192092898,
                     "PanOffset": {
-                        "x": 183.71417236328126,
-                        "y": 17.5313720703125
+                        "x": 468.7501220703125,
+                        "y": 25.534881591796876
                     },
                     "ColorModeBackgroundOpacity": 1.0,
                     "ImageModeCanvasBackgroundOpacity": 1.0,
