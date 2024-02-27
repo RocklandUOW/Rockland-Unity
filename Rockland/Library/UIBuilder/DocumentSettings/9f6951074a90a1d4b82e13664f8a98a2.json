@@ -3,13 +3,13 @@
     "UxmlPath": "Assets/UI/UI Documents Folder/Pet Rock UI.uxml",
     "CanvasX": 0,
     "CanvasY": 0,
-    "CanvasWidth": 325,
-    "CanvasHeight": 578,
+    "CanvasWidth": 1080,
+    "CanvasHeight": 1920,
     "MatchGameView": false,
-    "ZoomScale": 1.0,
+    "ZoomScale": 0.30000001192092898,
     "PanOffset": {
-        "x": 350.29998779296877,
-        "y": 26.25262451171875
+        "x": 183.71417236328126,
+        "y": 17.5313720703125
     },
     "ColorModeBackgroundOpacity": 1.0,
     "ImageModeCanvasBackgroundOpacity": 1.0,
