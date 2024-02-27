@@ -13,45 +13,31 @@
         "m_CodePreviewVisible": true,
         "m_OpenUXMLFiles": [
             {
-                "m_OpenUSSFiles": [
-                    {
-                        "m_StyleSheet": {
-                            "fileID": 7433441132597879392,
-                            "guid": "ac80b65cf25f2c142b053b3c9eaeacc7",
-                            "type": 3
-                        },
-                        "m_BackupStyleSheet": {
-                            "instanceID": 0
-                        },
-                        "m_OldPath": "Assets/UI/USS/Base USS.uss"
-                    }
-                ],
+                "m_OpenUSSFiles": [],
                 "m_VisualTreeAssetBackup": {
                     "instanceID": 0
                 },
-                "m_OpenendVisualTreeAssetOldPath": "Assets/UI/UI Documents Folder/UI Base.uxml",
+                "m_OpenendVisualTreeAssetOldPath": "Assets/UI/UI Documents Folder/Pet Rock UI.uxml",
                 "m_VisualTreeAsset": {
                     "fileID": 9197481963319205126,
-                    "guid": "8a82c7c6d2f505a4894a650554a7703b",
+                    "guid": "9f6951074a90a1d4b82e13664f8a98a2",
                     "type": 3
                 },
                 "m_ActiveStyleSheet": {
-                    "fileID": 7433441132597879392,
-                    "guid": "ac80b65cf25f2c142b053b3c9eaeacc7",
-                    "type": 3
+                    "instanceID": 0
                 },
                 "m_Settings": {
-                    "UxmlGuid": "8a82c7c6d2f505a4894a650554a7703b",
-                    "UxmlPath": "Assets/UI Documents Folder/UI Base.uxml",
+                    "UxmlGuid": "9f6951074a90a1d4b82e13664f8a98a2",
+                    "UxmlPath": "Assets/UI/UI Documents Folder/Pet Rock UI.uxml",
                     "CanvasX": 0,
                     "CanvasY": 0,
-                    "CanvasWidth": 753,
-                    "CanvasHeight": 1280,
+                    "CanvasWidth": 350,
+                    "CanvasHeight": 450,
                     "MatchGameView": false,
-                    "ZoomScale": 0.5,
+                    "ZoomScale": 1.0,
                     "PanOffset": {
-                        "x": 272.46978759765627,
-                        "y": 6.2747650146484379
+                        "x": 20.0,
+                        "y": 20.0
                     },
                     "ColorModeBackgroundOpacity": 1.0,
                     "ImageModeCanvasBackgroundOpacity": 1.0,

@@ -1,10 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="FaHome" src="project://database/Assets/Icons/FaHome.uxml?fileID=9197481963319205126&amp;guid=43fc6f7b97e501749bcd0f84b2a2b456&amp;type=3#FaHome" />
     <Style src="project://database/Assets/UI/USS/Base%20USS.uss?fileID=7433441132597879392&amp;guid=ac80b65cf25f2c142b053b3c9eaeacc7&amp;type=3#Base USS" />
-    <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgb(0, 224, 54); height: 121px;" />
-    <ui:VisualElement name="Body" style="flex-grow: 1; height: 900px;">
-        <ui:ScrollView name="Home-Screen">
-            <ui:Label tabindex="-1" text="Favourite Rock" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Favourite-Rock" />
+    <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgb(0, 224, 54); height: 13px;">
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Money-Label" style="font-size: 64px; height: 81px; width: 206px;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Body" style="flex-grow: 1; height: 900px; align-items: center; justify-content: center;">
+        <ui:ScrollView name="Home-Screen" style="flex-direction: column; align-items: center; align-self: center; justify-content: flex-start;">
+            <ui:Label tabindex="-1" text="Favourite Rock" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Favourite-Rock" style="font-size: 87px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Favourite-rock-btn" style="background-image: url(&apos;project://database/Assets/Untitled.jpeg?fileID=21300000&amp;guid=97857aa737b3ef64fb54fe1dc71ad6ae&amp;type=3#Untitled&apos;); height: 825px; width: 699px; -unity-background-image-tint-color: rgb(149, 149, 149); background-color: rgb(188, 188, 188);" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" text="Take Picture" name="Take-picture" style="height: 187px; width: 473px; white-space: nowrap; -unity-text-align: middle-center; font-size: 65px;" />
         </ui:ScrollView>
     </ui:VisualElement>
     <ui:VisualElement name="Footer" style="flex-grow: 1; background-color: rgb(28, 163, 2); align-items: flex-start; justify-content: center;">
