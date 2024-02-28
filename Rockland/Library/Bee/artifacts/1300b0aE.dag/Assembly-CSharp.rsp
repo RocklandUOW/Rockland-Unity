@@ -405,6 +405,7 @@
 "Assets/Scripts/CameraManager.cs"
 "Assets/Scripts/GoldManager.cs"
 "Assets/Scripts/NetworkManager.cs"
+"Assets/Scripts/PetRockUIController.cs"
 "Assets/Scripts/UIManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
