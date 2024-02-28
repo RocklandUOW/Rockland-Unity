@@ -72,4 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Additional settings
-Rockland/Library/PackageCache
+Rockland/Library
