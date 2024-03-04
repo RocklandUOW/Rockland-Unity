@@ -15,6 +15,7 @@ public class PetRockUIController : MonoBehaviour
     private Label goldPerSecondLabel;
     private Label goldPerClickLabel;
     private Label levelLabel;
+    private Label afterLevelLabel;
     private Label goldNeededLabel;
 
     // Buttons
@@ -22,6 +23,9 @@ public class PetRockUIController : MonoBehaviour
     private Button petRockButton;
     private Button feedButton;
     private Button levelUpButton;
+
+    // Progress bar
+    private ProgressBar levelProgress;
 
     // Buttons and labels string names
     [Header("Interactible names")]
@@ -32,44 +36,63 @@ public class PetRockUIController : MonoBehaviour
     [SerializeField] private string GoldPerSecondLabel = "Coin-per-second-text";
     [SerializeField] private string GoldPerClickLabel = "Coin-per-tap-text";
     [SerializeField] private string LevelLabel = "Lvl-text";
+    [SerializeField] private string AfterLevelLabel = "Level-next";
     [SerializeField] private string GoldNeededLabel = "Coins-needed-container";
     [Header("Buttons")]
     [SerializeField] private string BackButton = "Back-button";
     [SerializeField] private string PetRockButton = "Pet-button";
     [SerializeField] private string FeedButton = "Feed-button";
     [SerializeField] private string LevelUpButton = "Level-up-button";
+    [Header("Progress bars")]
+    [SerializeField] private string LevelProgress = "Level-progress-bar";
 
     // Various managers
     GoldManager goldManager;
+    NormalPetRock currentRock;
+    PetRockManager rockManager;
 
 
     private void OnEnable()
     {
         DeclareVariables();
 
-        //SetButtons();
+        SetButtons();
     }
 
     private void Start()
     {
         goldManager = (GoldManager)FindFirstObjectByType(typeof(GoldManager));
+        rockManager = (PetRockManager)FindFirstObjectByType(typeof(PetRockManager));
+        currentRock = rockManager.GetCurrentRock();
     }
 
     private void Update()
     {
+        rockNameLabel.text = currentRock.Name;
+        rockTypeLabel.text = currentRock.RockType;
+        
         coinLabel.text = goldManager.GetGoldAmount().ToString();
-        Debug.Log(goldManager.GetGoldAmount().ToString());
+        
+        goldPerClickLabel.text = currentRock.GetGoldPerTap().ToString() + " / Tap";
+        goldPerSecondLabel.text = currentRock.GetGoldPerTick().ToString() + " / Second";
+        
+        int i = Mathf.FloorToInt(currentRock.TotalGoldToNextLevel / 10);
+        goldNeededLabel.text = i.ToString();
+
+        levelLabel.text = (currentRock.UpgradeLevel).ToString();
+        afterLevelLabel.text = (currentRock.UpgradeLevel + 1).ToString();
+        levelProgress.highValue = currentRock.TotalGoldToNextLevel;
+        levelProgress.value = currentRock.TotalGoldToNextLevel - currentRock.GoldToNextLevel;
     }
 
-    //private void SetButtons()
-    //{
-    //    petRockButton.clicked += AddGold();
-    //}
+    private void SetButtons()
+    {
+        if (petRockButton != null) { petRockButton.clicked += () => { rockManager.GenerateGold(); }; }
+        else { Debug.LogWarning("No rock button assigned!"); }
 
-    //private Action AddGold()
-    //{
-    //    throw new NotImplementedException();
-    //}
+        if (levelUpButton != null) { levelUpButton.clicked += () => { rockManager.LevelUpRock(); }; }
+        else { Debug.LogWarning("No level up button assigned!"); }
+    }
 
     private void DeclareVariables()
     {
@@ -83,6 +106,7 @@ public class PetRockUIController : MonoBehaviour
         goldPerSecondLabel = root.Q<Label>(GoldPerSecondLabel);
         goldPerClickLabel = root.Q<Label>(GoldPerClickLabel);
         levelLabel = root.Q<Label>(LevelLabel);
+        afterLevelLabel = root.Q<Label>(AfterLevelLabel);
         goldNeededLabel = root.Q<Label>(GoldNeededLabel);
 
         // Buttons
@@ -90,5 +114,8 @@ public class PetRockUIController : MonoBehaviour
         petRockButton = root.Q<Button>(PetRockButton);
         feedButton = root.Q<Button>(FeedButton);
         levelUpButton = root.Q<Button>(LevelUpButton);
+
+        // Progress Bars
+        levelProgress = root.Q<ProgressBar>(LevelProgress);
     }
 }

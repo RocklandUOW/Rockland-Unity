@@ -330,12 +330,14 @@ MonoBehaviour:
   RockTypeLabel: Rock-type
   GoldPerSecondLabel: Coin-per-second-text
   GoldPerClickLabel: Coin-per-tap-text
-  LevelLabel: Lvl-text
-  GoldNeededLabel: Coins-needed-container
+  LevelLabel: Level-current
+  AfterLevelLabel: Level-next
+  GoldNeededLabel: Coins-needed-text
   BackButton: Back-button
-  PetRockButton: Pet-button
+  PetRockButton: Pet-Button
   FeedButton: Feed-button
   LevelUpButton: Level-up-button
+  LevelProgress: Level-progress-bar
 --- !u!1 &899925622
 GameObject:
   m_ObjectHideFlags: 0

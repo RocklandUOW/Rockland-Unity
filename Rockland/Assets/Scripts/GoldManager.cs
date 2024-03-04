@@ -80,18 +80,23 @@ public class GoldManager : MonoBehaviour
         actualGoldAmount += amount;
     }
 
-    public string RemoveGold(int amount)
+    public bool CheckGold(int amount)
     {
-        if( amount <= goldAmount)
+        if (amount <= actualGoldAmount)
         {
-            goldAmount -= amount;
-            goldAmount = Mathf.Clamp(goldAmount, 0, int.MaxValue); // Ensure gold doesn't go negative
-            return ("Success!");
+            RemoveGold(amount);
+            return true;
         }
         else
         {
-            return ("Failed!");
+            return false;
         }
+    }
+
+    public void RemoveGold(int amount)
+    {
+        actualGoldAmount -= amount;
+        goldAmount = Mathf.Clamp(goldAmount, 0, int.MaxValue); // Ensure gold doesn't go negative
     }
 
     public int GetGoldAmount()
@@ -112,12 +117,28 @@ public class GoldSource
 
 public class NormalPetRock : GoldSource
 {
-    public string Name;
+    public string Name = "Jeff";
+    public string RockType = "Andesite";
     public int UpgradeLevel = 1;
-    
+    public int TotalGoldToNextLevel = 10;
+    public int GoldToNextLevel = 10;
+
+    public void LevelUp()
+    {
+        UpgradeLevel += 1;
+        TotalGoldToNextLevel = Mathf.FloorToInt(10*(10*Mathf.Pow(UpgradeLevel, 2)));
+        GoldToNextLevel = TotalGoldToNextLevel;
+        Debug.Log("Gold to next level: " + TotalGoldToNextLevel);
+        Debug.Log("Gold per 10 to next level: " + GoldToNextLevel);
+    }
+
+    public virtual int GetGoldPerTap()
+    {
+        return Mathf.FloorToInt(BaseGoldPerTick * UpgradeLevel);
+    }
 
     public override int GetGoldPerTick()
     {
-        return (int)Mathf.Floor(BaseGoldPerTick * Mathf.Pow(UpgradeLevel, 1.1f));
+        return Mathf.FloorToInt((BaseGoldPerTick * UpgradeLevel)/2);
     }
 }

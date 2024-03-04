@@ -14,7 +14,7 @@
                 <ui:Label tabindex="-1" text="Zamrud Katulistiwa" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Rock-type" style="-unity-text-align: upper-center; padding-top: 0; margin-top: 2px; font-size: 42px;" />
                 <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-wrap: wrap; width: auto; flex-direction: row-reverse; align-items: center; justify-content: center; margin-top: 50px; margin-bottom: 20px;">
                     <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level-next" style="font-size: 26px; -unity-font-style: bold;" />
-                    <ui:ProgressBar value="22" name="Level-progress-bar" style="color: rgb(59, 40, 40); -unity-text-outline-color: rgba(7, 4, 4, 0); background-color: rgba(0, 0, 0, 0); width: 700px;" />
+                    <ui:ProgressBar value="2" name="Level-progress-bar" high-value="10" style="color: rgb(59, 40, 40); -unity-text-outline-color: rgba(7, 4, 4, 0); background-color: rgba(0, 0, 0, 0); width: 700px;" />
                     <ui:Label tabindex="-1" text="90" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level-current" style="font-size: 26px; -unity-font-style: bold;" />
                     <ui:Label tabindex="-1" text="Lvl" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Lvl-text" style="font-size: 26px;" />
                 </ui:VisualElement>
