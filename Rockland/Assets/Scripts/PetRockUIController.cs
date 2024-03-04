@@ -8,12 +8,6 @@ public class PetRockUIController : MonoBehaviour
 {
     private VisualElement root;
 
-    // Buttons
-    private Button backButton;
-    private Button petRockButton;
-    private Button feedButton;
-    private Button levelUpButton;
-
     // Labels
     private Label coinLabel;
     private Label rockNameLabel;
@@ -21,49 +15,66 @@ public class PetRockUIController : MonoBehaviour
     private Label goldPerSecondLabel;
     private Label goldPerClickLabel;
     private Label levelLabel;
+    private Label goldNeededLabel;
+
+    // Buttons
+    private Button backButton;
+    private Button petRockButton;
+    private Button feedButton;
+    private Button levelUpButton;
 
     // Buttons and labels string names
     [Header("Interactible names")]
     [Header("Labels")]
-    [SerializeField] private string CoinLabel;
-    [SerializeField] private string RockNameLabel;
-    [SerializeField] private string RockTypeLabel;
-    [SerializeField] private string GoldPerSecondLabel;
-    [SerializeField] private string GoldPerClickLabel;
-    [SerializeField] private string LevelLabel;
+    [SerializeField] private string CoinLabel = "Coin-count";
+    [SerializeField] private string RockNameLabel = "Rock-name";
+    [SerializeField] private string RockTypeLabel = "Rock-type";
+    [SerializeField] private string GoldPerSecondLabel = "Coin-per-second-text";
+    [SerializeField] private string GoldPerClickLabel = "Coin-per-tap-text";
+    [SerializeField] private string LevelLabel = "Lvl-text";
+    [SerializeField] private string GoldNeededLabel = "Coins-needed-container";
     [Header("Buttons")]
-    [SerializeField] private string BackButton;
-    [SerializeField] private string PetRockButton;
-    [SerializeField] private string FeedButton;
-    [SerializeField] private string LevelUpButton;
+    [SerializeField] private string BackButton = "Back-button";
+    [SerializeField] private string PetRockButton = "Pet-button";
+    [SerializeField] private string FeedButton = "Feed-button";
+    [SerializeField] private string LevelUpButton = "Level-up-button";
+
+    // Various managers
+    GoldManager goldManager;
+
 
     private void OnEnable()
     {
         DeclareVariables();
 
-        SetButtons();
+        //SetButtons();
     }
 
-    private void SetButtons()
+    private void Start()
     {
-        petRockButton.clicked += AddGold();
+        goldManager = (GoldManager)FindFirstObjectByType(typeof(GoldManager));
     }
 
-    private Action AddGold()
+    private void Update()
     {
-        throw new NotImplementedException();
+        coinLabel.text = goldManager.GetGoldAmount().ToString();
+        Debug.Log(goldManager.GetGoldAmount().ToString());
     }
+
+    //private void SetButtons()
+    //{
+    //    petRockButton.clicked += AddGold();
+    //}
+
+    //private Action AddGold()
+    //{
+    //    throw new NotImplementedException();
+    //}
 
     private void DeclareVariables()
     {
         // Adds functionality to buttons
         root = GetComponent<UIDocument>().rootVisualElement;
-
-        // Buttons
-        backButton = root.Q<Button>(BackButton);
-        petRockButton = root.Q<Button>(PetRockButton);
-        feedButton = root.Q<Button>(FeedButton);
-        levelUpButton = root.Q<Button>(LevelUpButton);
 
         // Labels
         coinLabel = root.Q<Label>(CoinLabel);
@@ -72,5 +83,12 @@ public class PetRockUIController : MonoBehaviour
         goldPerSecondLabel = root.Q<Label>(GoldPerSecondLabel);
         goldPerClickLabel = root.Q<Label>(GoldPerClickLabel);
         levelLabel = root.Q<Label>(LevelLabel);
+        goldNeededLabel = root.Q<Label>(GoldNeededLabel);
+
+        // Buttons
+        backButton = root.Q<Button>(BackButton);
+        petRockButton = root.Q<Button>(PetRockButton);
+        feedButton = root.Q<Button>(FeedButton);
+        levelUpButton = root.Q<Button>(LevelUpButton);
     }
 }

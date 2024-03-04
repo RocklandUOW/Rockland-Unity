@@ -8,9 +8,12 @@ public class GoldManager : MonoBehaviour
     [SerializeField]
     private string startingScene = "Home Scene";
 
-
+    private float actualGoldAmount;
     private int goldAmount;
     private List<GoldSource> goldSources = new List<GoldSource>();
+
+    [SerializeField]
+    private bool DebugMode = true;
 
     private void Awake()
     {
@@ -35,9 +38,18 @@ public class GoldManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateGold(Time.deltaTime);
+        goldAmount = (int) actualGoldAmount;
+        if (DebugMode) { Debug.Log("Total amount of Gold: " + goldAmount); Debug.Log("Float amount of Gold: " + actualGoldAmount); }
+        
+    }
+
     public void AddGoldSource(GoldSource source)
     {
         goldSources.Add(source);
+        if (DebugMode) { Debug.Log("Succesfully added source!"); }
     }
 
     public void RemoveGoldSource(GoldSource source)
@@ -45,31 +57,41 @@ public class GoldManager : MonoBehaviour
         goldSources.Remove(source);
     }
 
-    public int GetTotalGoldAmount()
+    public float GetTotalGoldAmount()
     {
-        int totalGold = 0;
+        float totalGold = 0;
         foreach (GoldSource source in goldSources)
         {
+            if (DebugMode) { Debug.Log("Gold Per Tick: " + source.GetGoldPerTick()); }
             totalGold += source.GetGoldPerTick();
         }
+        if (DebugMode) { Debug.Log("Total Gold Per Tick " + totalGold); }
         return totalGold;
     }
 
     public void UpdateGold(float deltaTime)
     {
-        int goldEarned = Mathf.FloorToInt(GetTotalGoldAmount() * deltaTime);
+        float goldEarned = GetTotalGoldAmount() * deltaTime;
         AddGold(goldEarned);
     }
 
-    public void AddGold(int amount)
+    public void AddGold(float amount)
     {
-        goldAmount += amount;
+        actualGoldAmount += amount;
     }
 
-    public void RemoveGold(int amount)
+    public string RemoveGold(int amount)
     {
-        goldAmount -= amount;
-        goldAmount = Mathf.Clamp(goldAmount, 0, int.MaxValue); // Ensure gold doesn't go negative
+        if( amount <= goldAmount)
+        {
+            goldAmount -= amount;
+            goldAmount = Mathf.Clamp(goldAmount, 0, int.MaxValue); // Ensure gold doesn't go negative
+            return ("Success!");
+        }
+        else
+        {
+            return ("Failed!");
+        }
     }
 
     public int GetGoldAmount()
@@ -80,27 +102,22 @@ public class GoldManager : MonoBehaviour
 
 public class GoldSource
 {
-    public int baseGoldPerTick;
+    public int BaseGoldPerTick = 5;
 
     public virtual int GetGoldPerTick()
     {
-        return baseGoldPerTick;
+        return BaseGoldPerTick;
     }
 }
 
 public class NormalPetRock : GoldSource
 {
-    [SerializeField]
-    private int upgradeLevel;
-
-    public int UpgradeLevel
-    {
-        get { return upgradeLevel; }
-        set { upgradeLevel = value; }
-    }
+    public string Name;
+    public int UpgradeLevel = 1;
+    
 
     public override int GetGoldPerTick()
     {
-        return (int)Mathf.Floor(baseGoldPerTick * Mathf.Pow(upgradeLevel, 1.1f));
+        return (int)Mathf.Floor(BaseGoldPerTick * Mathf.Pow(UpgradeLevel, 1.1f));
     }
 }
