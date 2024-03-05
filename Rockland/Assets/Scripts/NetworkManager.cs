@@ -12,6 +12,8 @@ public class NetworkManager : MonoBehaviour
     [SerializeField]
     private string imageRecognitionURL = "https://api.example.com/upload"; // Replace with the Rockland AI service 
     public Texture2D ImageToUpload; // Picture to be sent to AI service
+
+    // General response
     public string Response;
 
     private void Awake()

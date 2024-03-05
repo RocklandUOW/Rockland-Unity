@@ -51,7 +51,6 @@ public class PetRockUIController : MonoBehaviour
     NormalPetRock currentRock;
     PetRockManager rockManager;
 
-
     private void OnEnable()
     {
         DeclareVariables();
@@ -68,21 +67,22 @@ public class PetRockUIController : MonoBehaviour
 
     private void Update()
     {
-        rockNameLabel.text = currentRock.Name;
-        rockTypeLabel.text = currentRock.RockType;
-        
-        coinLabel.text = goldManager.GetGoldAmount().ToString();
-        
-        goldPerClickLabel.text = currentRock.GetGoldPerTap().ToString() + " / Tap";
-        goldPerSecondLabel.text = currentRock.GetGoldPerTick().ToString() + " / Second";
+        if (rockNameLabel != null) { rockNameLabel.text = currentRock.Name; }
+        if (rockTypeLabel != null) { rockTypeLabel.text = currentRock.RockType; }
+
+        if (coinLabel != null) { coinLabel.text = goldManager.GetGoldAmount().ToString(); }
+
+        if (goldPerClickLabel != null) { goldPerClickLabel.text = currentRock.GetGoldPerTap().ToString() + " / Tap"; }
+        if (goldPerSecondLabel != null) { goldPerSecondLabel.text = currentRock.GetGoldPerTick().ToString() + " / Second"; }
         
         int i = Mathf.FloorToInt(currentRock.TotalGoldToNextLevel / 10);
-        goldNeededLabel.text = i.ToString();
+        if (goldNeededLabel != null) { goldNeededLabel.text = i.ToString(); }
 
-        levelLabel.text = (currentRock.UpgradeLevel).ToString();
-        afterLevelLabel.text = (currentRock.UpgradeLevel + 1).ToString();
-        levelProgress.highValue = currentRock.TotalGoldToNextLevel;
-        levelProgress.value = currentRock.TotalGoldToNextLevel - currentRock.GoldToNextLevel;
+        if (levelLabel != null) { levelLabel.text = currentRock.UpgradeLevel.ToString(); }
+        if (afterLevelLabel != null) { afterLevelLabel.text = (currentRock.UpgradeLevel + 1).ToString(); }
+
+        if (levelProgress != null) { levelProgress.highValue = currentRock.TotalGoldToNextLevel; levelProgress.value = currentRock.TotalGoldToNextLevel - currentRock.GoldToNextLevel; }
+  
     }
 
     private void SetButtons()
