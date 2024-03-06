@@ -407,6 +407,7 @@
 "Assets/Scripts/Deprecated/GoldManager.cs"
 "Assets/Scripts/Deprecated/PetRockUIController.cs"
 "Assets/Scripts/Deprecated/UIManager.cs"
+"Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemyManager.cs"
 "Assets/Scripts/LoginUIController.cs"
 "Assets/Scripts/NetworkManager.cs"
