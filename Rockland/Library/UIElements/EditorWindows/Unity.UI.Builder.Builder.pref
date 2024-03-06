@@ -69,7 +69,7 @@ MonoBehaviour:
   - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":240.0},"firstVisibleIndex":12,"contentPadding":0.0,"contentHeight":0.0,"anchoredItemIndex":0,"anchorOffset":0.0},"m_ExpandedItemIds":[1,-1093844799,-23468461,-1995360713,960794656,1494299816,1759369387,-2084839952,-832141246,148755853,-1640814031,-116313718,1580410909,1756001241,1487565652,-477594564]}'
   - '{"m_ShowPackageTemplates":false,"m_ViewMode":0,"m_ActiveTab":0}'
   - '{"m_SelectedItemId":-1088555544}'
-  - '{"m_Value":162.0,"m_LowValue":0.0,"m_HighValue":614.3999633789063}'
+  - '{"m_Value":162.0,"m_LowValue":0.0,"m_HighValue":872.7999877929688}'
   - '{"m_Value":0.0,"m_LowValue":0.0,"m_HighValue":0.0}'
   - '{"m_FixedPaneDimension":300.0}'
   - '{"m_FixedPaneDimension":20.0}'

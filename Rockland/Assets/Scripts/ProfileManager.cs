@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ProfileManager : MonoBehaviour
 {
+    string username;
+    int currentXP;
+    int currentLVL;
+    int nextLevelXP;
+
     // Start is called before the first frame update
     void Start()
     {

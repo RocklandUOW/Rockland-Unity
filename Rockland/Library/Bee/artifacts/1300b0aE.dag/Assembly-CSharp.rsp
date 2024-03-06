@@ -403,13 +403,16 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/CameraManager.cs"
+"Assets/Scripts/DamageManager.cs"
+"Assets/Scripts/Deprecated/GoldManager.cs"
+"Assets/Scripts/Deprecated/PetRockUIController.cs"
 "Assets/Scripts/Deprecated/UIManager.cs"
-"Assets/Scripts/GoldManager.cs"
+"Assets/Scripts/EnemyManager.cs"
 "Assets/Scripts/LoginUIController.cs"
 "Assets/Scripts/NetworkManager.cs"
 "Assets/Scripts/PetRockManager.cs"
-"Assets/Scripts/PetRockUIController.cs"
 "Assets/Scripts/ProfileManager.cs"
+"Assets/Scripts/StageManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 
