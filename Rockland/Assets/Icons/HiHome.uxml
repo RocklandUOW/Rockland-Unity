@@ -1,0 +1,8 @@
+
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+    xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements"
+    editor="UnityEditor.UIElements">
+    <ui:Image
+        style="--unity-image: url(&apos;HiHome.svg?&amp;guid=81bd39f6ad6403343ba8cd8c589132a1&amp;type=3&apos;); width: 100%; height: 100%;" />
+</ui:UXML>
+                            

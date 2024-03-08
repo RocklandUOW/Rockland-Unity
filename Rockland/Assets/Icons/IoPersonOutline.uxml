@@ -1,0 +1,8 @@
+
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+    xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements"
+    editor="UnityEditor.UIElements">
+    <ui:Image
+        style="--unity-image: url(&apos;IoPersonOutline.svg?&amp;guid=d78ac7787a13e2f4fb9b340ccb5c714a&amp;type=3&apos;); width: 100%; height: 100%;" />
+</ui:UXML>
+                            

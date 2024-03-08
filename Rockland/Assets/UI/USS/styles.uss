@@ -1,15 +1,28 @@
-.unity-progress-bar__container{
-	height: 50px;
-	min-height: 50px;
+.unity-progress-bar__container {
+    height: 50px;
+    min-height: 50px;
 }
 
 .unity-progress-bar__progress {
-	background-color: #fff;
-	border-radius: 14px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
 }
 
 .unity-progress-bar__background {
-	background-color: #917352;
-	border-radius: 16px;
+    background-color: rgb(145, 115, 82);
+    border-radius: 16px;
 }
 
+.general-button {
+    scale: 1 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.1s;
+}
+
+.general-button:active {
+    scale: 0.9 0.9;
+}
+
+.general-button:inactive {
+    scale: 1 1;
+}

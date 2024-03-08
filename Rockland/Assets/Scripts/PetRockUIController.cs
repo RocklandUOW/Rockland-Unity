@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
@@ -92,6 +93,10 @@ public class PetRockUIController : MonoBehaviour
 
         if (levelUpButton != null) { levelUpButton.clicked += () => { rockManager.LevelUpRock(); }; }
         else { Debug.LogWarning("No level up button assigned!"); }
+
+        if (backButton != null) { backButton.clicked += () => { SceneManager.LoadScene("HomeScene"); }; }
+        else { Debug.LogWarning("Undefined reference: " + BackButton); }
+        
     }
 
     private void DeclareVariables()
