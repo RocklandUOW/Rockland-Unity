@@ -13,6 +13,7 @@ public class NetworkManager : MonoBehaviour
     private string imageRecognitionURL = "https://api.example.com/upload"; // Replace with the Rockland AI service 
     public Texture2D ImageToUpload; // Picture to be sent to AI service
 
+    public Texture2D TestVariable;
     // General response
     public string Response;
 
@@ -29,10 +30,16 @@ public class NetworkManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    
+    public void imgRecButton()
+    {
+        Debug.Log(ImageRecognition(TestVariable));
+    }
 
     public string ImageRecognition(Texture2D img)
     {
         ImageToUpload = img;
+        Debug.Log("Attempting to send image");
         StartCoroutine(uploadImage());
         return Response;
     }
@@ -44,7 +51,7 @@ public class NetworkManager : MonoBehaviour
         imageData = ImageConversion.EncodeToPNG(ImageToUpload);
 
         var wwwForm = new WWWForm();
-        wwwForm.AddBinaryData("image", imageData, "image.png", "image/png");
+        wwwForm.AddBinaryData("file", imageData, "file", "file/png");
 
         using (UnityWebRequest request = UnityWebRequest.Post(imageRecognitionURL, wwwForm))
         {
@@ -52,7 +59,7 @@ public class NetworkManager : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.ConnectionError)
             {
-                Debug.LogError("Error: " + request.error);
+                Debug.LogWarning("Error: " + request.error);
             }
             else
             {
