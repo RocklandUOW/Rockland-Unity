@@ -1,0 +1,8 @@
+.loginField > TextInput {
+    background-color: rgba(255, 0, 0, 0);
+    border-width: 0;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    border-bottom-width: 2px;
+    border-bottom-color: white;
+}
